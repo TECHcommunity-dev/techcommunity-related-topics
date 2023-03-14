@@ -1,5 +1,7 @@
 <!-- If our component is true, show this content: -->
-<PluginOutlet @name="above-related-topics" @tagName="span" @connectorTagName="div" @args={{hash model=this.model}} />
+<span>
+    <PluginOutlet @name="above-related-topics" @connectorTagName="div" @outletArgs={{hash model=this.model}} />
+</span>
 {{#if displayRelatedTopics}}
 
     <div class="custom-related-topics-wrapper">
@@ -8,7 +10,7 @@
 
     <!-- Unless topics are still loading... -->
     {{#unless loadingTopics}}
-        <!-- Show the related topics list  -->
+        <!-- Show the related topic list title -->
         <h3 id="related-topics-title" class="related-topics-title">
             {{relatedTopicsTitle}}
         </h3>
@@ -20,4 +22,6 @@
     </div>
 {{/if}}
 
-<PluginOutlet @name="below-related-topics" @tagName="span" @connectorTagName="div" @args={{hash model=this.model}} />
+<span>
+    <PluginOutlet @name="below-related-topics" @connectorTagName="div" @outletArgs={{hash model=this.model}} />
+</span>
